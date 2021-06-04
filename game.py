@@ -33,20 +33,24 @@ class Game:
         p1 = self.moves[0].upper()[0]
         p2 = self.moves[1].upper()[0]
 
-        winner = -1
-        if p1 == "SMASH" and p2 == "STRIKE":
+        if p1 == "SM" and p2 == "ST":
             winner = 0
-        elif p1 == "SMASH" and p2 == "SWIPE":
+        elif p1 == "SM" and p2 == "SW":
             winner = 1
-        elif p1 == "SWIPE" and p2 == "SMASH":
+        elif p1 == "SW" and p2 == "SM":
             winner = 0
-        elif p1 == "SWIPE" and p2 == "STRIKE":
+        elif p1 == "SW" and p2 == "ST":
             winner = 1
-        elif p1 == "STRIKE" and p2 == "SWIPE":
+        elif p1 == "ST" and p2 == "SW":
             winner = 0
-        elif p1 == "STRIKE" and p2 == "SMASH":
+        elif p1 == "ST" and p2 == "SM":
             winner = 1
-
+        elif p1 == "SM" and p2 == "SM":
+            winner = -1
+        elif p1 == "ST" and p2 == "ST":
+            winner = -1
+        elif p1 == "SW" and p2 == "SW":
+            winner = -1    
         return winner
 
     def resetWent(self):
